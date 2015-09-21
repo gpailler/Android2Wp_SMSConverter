@@ -55,3 +55,12 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# VirtualEnv
+venv/
+
+# SublimeText
+*.sublime-*
+
+# Samples
+samples/
