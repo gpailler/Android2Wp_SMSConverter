@@ -25,8 +25,12 @@
   $ pip install -r requirements.txt
   $ python converter.py --xml android.xml --msg windowsphone.msg
   ```
-  * The script will append all SMS from Android to the Windows Phone backup and regenerate a valid integrity checksum.
-  * Copy generated files **result.msg** and **result.hsh** on the Windows Phone and restore SMS in contact+message backup application.
+  * The script will append all SMS from Android to the Windows Phone backup and regenerate a valid integrity checksum
+  * Copy generated files **result.msg** and **result.hsh** on the Windows Phone
+
+4. On Windows Phone:
+  * Launch messaging application, click select then select all (in extended menu) and delete all messages
+  * Launch contact+message backup application and restore all SMS
 
 
 ### Background
