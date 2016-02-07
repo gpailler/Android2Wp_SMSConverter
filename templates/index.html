@@ -26,7 +26,7 @@
         {% with messages = get_flashed_messages() %}
           {% if messages %}
             <div class="alert alert-danger" role="alert">
-              <strong>Conversion error</strong><br />
+              <strong>Error</strong><br />
               {% for message in messages %}
                 {{ message }}<br />
               {% endfor %}
@@ -34,20 +34,40 @@
           {% endif %}
         {% endwith %}
 
-        <form action="convert" method="post" enctype="multipart/form-data">
-          <div class="form-group">
-            <label for="xmlFile">.xml file</label>
-            <input type="file" name="xmlFile" id="xmlFile" accept=".xml">
+        <div class="panel panel-default">
+          <div class="panel-heading">Conversion</div>
+          <div class="panel-body">
+            <form action="convert" method="post" enctype="multipart/form-data">
+              <div class="form-group">
+                <label for="xmlFile">.xml file</label>
+                <input type="file" name="xmlFile" id="xmlFile" accept=".xml">
+              </div>
+              <div class="form-group">
+                <label for="msgFile">.msg file</label>
+                <input type="file" name="msgFile" id="msgFile" accept=".msg">
+              </div>
+              <div class="form-group">
+                <p class="help-block">Max {{ max_file_size // 1024 // 1024 }}MB for each file</p>
+                <button type="submit" class="btn btn-default">Convert</button>
+              </div>
+            </form>
           </div>
-          <div class="form-group">
-            <label for="msgFile">.msg file</label>
-            <input type="file" name="msgFile" id="msgFile" accept=".msg">
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">Checksum file creation</div>
+          <div class="panel-body">
+            <form action="createchecksum" method="post" enctype="multipart/form-data">
+              <div class="form-group">
+                <label for="msgFile">.msg file</label>
+                <input type="file" name="msgFile" id="msgFile" accept=".msg">
+              </div>
+              <div class="form-group">
+                <p class="help-block">Max {{ max_file_size // 1024 // 1024 }}MB</p>
+                <button type="submit" class="btn btn-default">Create checksum file</button>
+              </div>
+            </form>
           </div>
-          <div class="form-group">
-            <p class="help-block">Max {{ max_file_size // 1024 // 1024 }}MB for each file</p>
-            <button type="submit" class="btn btn-default">Convert</button>
-          </div>
-        </form>
+        </div>
         <div class="alert alert-warning" role="alert">
           <strong>What happen with your uploaded data?</strong>
           <br />
