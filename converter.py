@@ -64,7 +64,7 @@ def append_message(root, address, date, type, text):
     etree.SubElement(message, 'Attachments')
 
     timestamp = etree.SubElement(message, 'LocalTimestamp')
-    input_timestamp = datetime.datetime.fromtimestamp(int(date[:-3]))
+    input_timestamp = datetime.datetime.utcfromtimestamp(int(date[:-3]))
     timestamp.text = str(filetimes.dt_to_filetime(input_timestamp))
 
     root.append(message)
