@@ -18,32 +18,32 @@ The script will append all SMS from Android to the Windows Phone backup and rege
 3. On the computer:
 You have multiple options to convert files
   1. Option 1 - The easy way
-  * Visit https://android2wpsmsconverter.pythonanywhere.com/, send your  files, convert them and extract the files from the generated zip archive.
+    * Visit https://android2wpsmsconverter.pythonanywhere.com/, send your  files, convert them and extract the files from the generated zip archive.
   2. Option 2 - The Do It Myself (online) way
-  * Create an account on https://www.pythonanywhere.com/
-  * Start a new Bash console
-  * In the console, execute following command:
-  ```bash
-  $ git clone https://github.com/gpailler/Android2Wp_SMSConverter
-  ```
-  * In PythonAnywhere management, select Files section and import *.xml* and *.msg* files in Android2Wp_SMSConverter folder.
-  * In the console, execute following commands:
-  ```bash
-  $ cd Android2Wp_SMSConverter
-  $ python3.4 converter.py convert --xml android.xml --msg windowsphone.msg
-  ```
-  * Finally, you can retrieve generated file
+    * Create an account on https://www.pythonanywhere.com/
+    * Start a new Bash console
+    * In the console, execute following command:
+    ```bash
+    $ git clone https://github.com/gpailler/Android2Wp_SMSConverter
+    ```
+    * In PythonAnywhere management, select Files section and import *.xml* and *.msg* files in Android2Wp_SMSConverter folder.
+    * In the console, execute following commands:
+    ```bash
+    $ cd Android2Wp_SMSConverter
+    $ python3.4 converter.py convert --xml android.xml --msg windowsphone.msg
+    ```
+    * Finally, you can retrieve generated file
   3. Option 3 - The hard way
-  * Clone this project, create a virtual env to retrieve dependencies and launch the conversion process
-  ```
-  $ git clone https://github.com/gpailler/Android2Wp_SMSConverter
-  $ cd Android2Wp_SMSConverter
-  $ pyvenv venv
-  $ source venv/bin/activate
-  $ pip install -r requirements.txt
-  $ python converter.py convert --xml android.xml --msg windowsphone.msg
-  ```
-  * Copy generated files **result.msg** and **result.hsh** on the Windows Phone
+    * Clone this project, create a virtual env to retrieve dependencies and launch the conversion process
+    ```
+    $ git clone https://github.com/gpailler/Android2Wp_SMSConverter
+    $ cd Android2Wp_SMSConverter
+    $ pyvenv venv
+    $ source venv/bin/activate
+    $ pip install -r requirements.txt
+    $ python converter.py convert --xml android.xml --msg windowsphone.msg
+    ```
+    * Copy generated files **result.msg** and **result.hsh** on the Windows Phone
 
 4. On Windows Phone:
   * Launch messaging application, click select then select all (in extended menu) and delete all messages
